@@ -66,17 +66,18 @@ vcs = 2
 init = 1; 
 ax = [0 0];
 
-sess_file.sess_file_rh_laugh=(sprintf('%s/session_speakaligned_rh_voi_laugh.mat',folder_name));
+sess_file.sess_file_rh_speech=(sprintf('%s/session_speakaligned_rh_voi_speech.mat',folder_name));
+sess_file.sess_file_lh_speech=(sprintf('%s/session_speakaligned_lh_voi_speech.mat',folder_name));
+
 sess_file.sess_file_lh_laugh=(sprintf('%s/session_speakaligned_lh_voi_laugh.mat',folder_name));
 
 cd(folder_name)
 
 
-champagne_wrapper('session_speakaligned_lh_voi_laugh.mat');
-champagne_wrapper('session_speakaligned_rh_voi_laugh.mat');
-
 champagne_wrapper('session_speakaligned_lh_voi_speech.mat');
 champagne_wrapper('session_speakaligned_rh_voi_speech.mat');
+
+champagne_wrapper('session_speakaligned_rh_voi_laugh.mat');
 
 
 

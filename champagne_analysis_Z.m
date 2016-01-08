@@ -5,10 +5,10 @@
 % NB if have changed the location of the MRI
 % clear all
 % cd /Users/zagnew/EmoVoc_meg/champagne_analysis/
-% load('/Users/zagnew/EmoVoc_meg/champagne_analysis/session_speakaligned.mat')
-% coreg.mripath='/Users/zagnew/EmoVoc_meg/mri/AgnewZarinah_emovoc_V2.img'
-% coreg.norm_mripath='/Users/zagnew/EmoVoc_meg/mri/wAgnewZarinah_emovoc_V2.img'
-% save session_speakaligned 
+%  load('/Users/zagnew/EmoVoc_meg/cham_anal/session_speakaligned.mat')
+%  coreg.mripath='/Users/zagnew/EmoVoc_meg/mri/AgnewZarinah_emovoc_V2.img'
+%  coreg.norm_mripath='/Users/zagnew/EmoVoc_meg/mri/wAgnewZarinah_emovoc_V2.img'
+%  save session_speakaligned 
 clear all
 folder_name = uigetdir
 
@@ -27,9 +27,15 @@ cd(folder_name)
 
 sess_file.sess_file= (sprintf('%s/session_speakaligned.mat',folder_name));
 
-
 gen_nuttf_sessionfile(sess_file.sess_file,'rh',8);
 gen_nuttf_sessionfile(sess_file.sess_file,'lh',8);
+
+
+
+% or
+
+gen_sessionfile_nuttf(sess,hemi,voxelsize)
+
 
 % load trials file
 uiopen
@@ -58,10 +64,20 @@ gen_trialsubset_sessionfile(sess_file.sess_file_lh, trials.speech(1:43), 'speech
 % desktop/create_conds_fmtAlt
 
 %% champagne
-t1 = -100; 
+% t1 = -100; 
+% t2 = -5; 
+% t3 = 25; 
+% t4 = 250; 
+
+
+
+t1 = -200; 
 t2 = -5; 
-t3 = 25; 
-t4 = 250; 
+t3 = 300; 
+t4 = 1000; 
+
+
+
 vcs = 2  
 init = 1; 
 ax = [0 0];
